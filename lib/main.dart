@@ -3,10 +3,9 @@ import 'package:flutter/services.dart';
 import 'package:nubank/pages/home/home_page.dart';
 
 void main() {
-  SystemChrome.setSystemUIOverlayStyle(const SystemUiOverlayStyle(
-    systemNavigationBarColor: Colors.blue,
-    statusBarColor: Colors.pink,
-  ));
+  SystemChrome.setSystemUIOverlayStyle(
+    const SystemUiOverlayStyle(statusBarBrightness: Brightness.dark),
+  );
   runApp(const MyApp());
 }
 
