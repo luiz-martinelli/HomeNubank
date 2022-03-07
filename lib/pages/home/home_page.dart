@@ -1,8 +1,20 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/pages/widgets/my_app_bar.dart';
 
-class HomePage extends StatelessWidget {
+class HomePage extends StatefulWidget {
   const HomePage({Key? key}) : super(key: key);
+
+  @override
+  State<HomePage> createState() => _HomePageState();
+}
+
+class _HomePageState extends State<HomePage> {
+  late bool _showMenu;
+  @override
+  void initState() {
+    super.initState();
+    _showMenu = false;
+  }
 
   @override
   Widget build(BuildContext context) {
