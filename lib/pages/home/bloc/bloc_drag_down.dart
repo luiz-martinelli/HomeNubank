@@ -10,6 +10,8 @@ class BlocDragDown {
 
   BlocDragDown({this.positionInit, required this.height});
 
+  set velocity(double velocity) {}
+
   void changePosition({required double updated}) {
     positionEnd = updated;
     if ((updated + 2.0) > (height * 0.14)) {

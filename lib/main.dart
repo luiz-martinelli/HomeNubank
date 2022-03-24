@@ -1,6 +1,7 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:flutter/material.dart';
+import 'package:nubank/pages/home/home_page.dart';
 import 'package:nubank/pages/home/root_page.dart';
 
 void main() => runApp(const MyApp());
@@ -12,11 +13,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       title: 'Flutter Demo',
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const RootPage(),
+      home: const HomePage(),
     );
   }
 }

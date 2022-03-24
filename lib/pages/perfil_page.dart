@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:nubank/pages/home/bloc/bloc_drag_down.dart';
 import 'package:flutter/material.dart';
 
-class PerfilPage extends StatefulWidget {
+/*class PerfilPage extends StatefulWidget {
   bool animated;
   bool scroll;
 
@@ -204,4 +204,4 @@ class _PerfilPageState extends State<PerfilPage> {
           );
         });
   }
-}
+}*/

@@ -5,7 +5,7 @@ import 'package:nubank/pages/home/widgets/app_bar_home.dart';
 import 'package:nubank/pages/home/bloc/bloc_root.dart';
 import 'package:nubank/pages/home/bloc/bloc_drag_down.dart';
 
-class RootPage extends StatefulWidget {
+/*class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
 
   @override
@@ -75,4 +75,4 @@ class _RootPageState extends State<RootPage> {
       ),
     );
   }
-}
+}*/
