@@ -14,9 +14,8 @@ class BlocDragDown {
 
   void changePosition({required double updated}) {
     positionEnd = updated;
-    if ((updated + 2.0) > (height * 0.14)) {
-      positionUpdated;
-    }
+    if ((updated + 2.0) > (height * 0.14))
+      positionUpdated.sink.add((updated / height - 0.13));
   }
 
   void jumptoBottom() {
@@ -24,7 +23,7 @@ class BlocDragDown {
 
     if (positionEnd > height * 0.2) {
       Timer.periodic(const Duration(milliseconds: 150), (Timer t) {
-        print("Timer");
+        //print("Timer");
         if (positionEnd >= height) {
           t.cancel();
         } else {
@@ -35,4 +34,4 @@ class BlocDragDown {
   }
 }
 
-var positionUpdated = BehaviorSubject<double>;
+var positionUpdated = BehaviorSubject<double>.seeded(0.0);

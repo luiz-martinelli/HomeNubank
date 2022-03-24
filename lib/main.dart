@@ -1,7 +1,6 @@
 // ignore_for_file: unnecessary_new
 
 import 'package:flutter/material.dart';
-import 'package:nubank/pages/home/home_page.dart';
 import 'package:nubank/pages/home/root_page.dart';
 
 void main() => runApp(const MyApp());
@@ -18,7 +17,7 @@ class MyApp extends StatelessWidget {
       theme: new ThemeData(
         primarySwatch: Colors.blue,
       ),
-      home: const HomePage(),
+      home: const RootPage(),
     );
   }
 }

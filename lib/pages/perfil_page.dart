@@ -2,7 +2,7 @@ import 'dart:async';
 import 'package:nubank/pages/home/bloc/bloc_drag_down.dart';
 import 'package:flutter/material.dart';
 
-/*class PerfilPage extends StatefulWidget {
+class PerfilPage extends StatefulWidget {
   bool animated;
   bool scroll;
 
@@ -31,16 +31,17 @@ class _PerfilPageState extends State<PerfilPage> {
 
   @override
   Widget build(BuildContext context) {
-    return StreamBuilder(
+    return StreamBuilder<double>(
         stream: positionUpdated.stream,
         builder: (context, snaphot) {
+          print("snaphot" + snaphot.data.toString());
           return AnimatedContainer(
             duration: Duration(milliseconds: widget.scroll ? 1 : 500),
             color: const Color.fromRGBO(109, 33, 119, 1.0),
             width: MediaQuery.of(context).size.width,
             height: widget.scroll
-                ? snaphot.data! : MediaQuery.of(context).size.height,
-            widget.animated == false
+                ? (snaphot.data! * MediaQuery.of(context).size.height)
+                : widget.animated == false
                     ? anime
                         ? 0.0
                         : MediaQuery.of(context).size.height
@@ -204,4 +205,4 @@ class _PerfilPageState extends State<PerfilPage> {
           );
         });
   }
-}*/
+}

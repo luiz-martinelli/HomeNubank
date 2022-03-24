@@ -5,7 +5,7 @@ import 'package:nubank/pages/home/widgets/app_bar_home.dart';
 import 'package:nubank/pages/home/bloc/bloc_root.dart';
 import 'package:nubank/pages/home/bloc/bloc_drag_down.dart';
 
-/*class RootPage extends StatefulWidget {
+class RootPage extends StatefulWidget {
   const RootPage({Key? key}) : super(key: key);
 
   @override
@@ -35,7 +35,7 @@ class _RootPageState extends State<RootPage> {
                 blocdrag = BlocDragDown(
                     positionInit: value.globalPosition.dy,
                     height: MediaQuery.of(context).size.height);
-                print("DragStart: ${value.globalPosition.dy}");
+                //print("DragStart: ${value.globalPosition.dy}");
               },
               onVerticalDragUpdate: (DragUpdateDetails value) {
                 blocdrag.changePosition(updated: value.globalPosition.dy);
@@ -43,7 +43,7 @@ class _RootPageState extends State<RootPage> {
               },
               onVerticalDragEnd: (DragEndDetails value) {
                 blocdrag.velocity = value.velocity.pixelsPerSecond.dy;
-                print("DragEnd: $value");
+                //print("DragEnd: $value");
               },
               onTap: () {
                 bloc.scroll = false;
@@ -52,22 +52,17 @@ class _RootPageState extends State<RootPage> {
               child: const AppBarHome()),
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height * 0.13)),
-      body: StreamBuilder(
+      body: StreamBuilder<bool>(
         stream: bloc.selectPage.stream,
         builder: (context, snapshot) {
           return snapshot.hasData
               ? Stack(
                   children: <Widget>[
                     const HomePage(),
-                    snapshot.data == true
-                        ? PerfilPage(
-                            animated: false,
-                            scroll: bloc.scroll,
-                          )
-                        : PerfilPage(
-                            animated: true,
-                            scroll: bloc.scroll,
-                          ),
+                    PerfilPage(
+                      animated: !snapshot.data!,
+                      scroll: bloc.scroll,
+                    )
                   ],
                 )
               : Container();
@@ -75,4 +70,4 @@ class _RootPageState extends State<RootPage> {
       ),
     );
   }
-}*/
+}

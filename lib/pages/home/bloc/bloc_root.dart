@@ -1,6 +1,6 @@
 import 'package:rxdart/rxdart.dart';
 
 class BlocRoot {
-  var selectPage = BehaviorSubject<bool>;
+  var selectPage = BehaviorSubject<bool>.seeded(false);
   bool scroll = false;
 }
