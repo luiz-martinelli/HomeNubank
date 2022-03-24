@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:nubank/pages/home/widgets/card_home.dart';
 import 'package:nubank/pages/home/widgets/card_bottom.dart';
-import 'package:nubank/pages/home/widgets/app_bar_home.dart';
 import 'package:nubank/pages/home/bloc/bloc_home.dart';
 
 class HomePage extends StatefulWidget {
+  const HomePage({Key? key}) : super(key: key);
+
   @override
   _HomePageState createState() => _HomePageState();
 }
@@ -20,22 +21,22 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     List<Widget> _pages = [
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
-      CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
+      const CardHome(),
     ];
 
     return Scaffold(
-      backgroundColor: Color.fromRGBO(109, 33, 119, 1.0),
+      backgroundColor: const Color.fromRGBO(109, 33, 119, 1.0),
       body: Container(
-        color: Color.fromRGBO(109, 33, 119, 1.0),
+        color: const Color.fromRGBO(109, 33, 119, 1.0),
         child: Column(
           children: <Widget>[
             //CARD PAGE VIEW
@@ -82,7 +83,8 @@ class _HomePageState extends State<HomePage> {
                                       radius: 3.5,
                                       backgroundColor: index == snapshot.data
                                           ? Colors.white
-                                          : Color.fromRGBO(145, 64, 169, 1.0),
+                                          : const Color.fromRGBO(
+                                              145, 64, 169, 1.0),
                                     )
                                   : Container();
                             }),
@@ -97,10 +99,10 @@ class _HomePageState extends State<HomePage> {
         constraints: BoxConstraints(
             maxWidth: MediaQuery.of(context).size.width,
             maxHeight: MediaQuery.of(context).size.height * 0.16),
-        child: new ListView.builder(
+        child: ListView.builder(
             scrollDirection: Axis.horizontal,
             itemBuilder: (context, index) {
-              return CardBottom();
+              return const CardBottom();
             }),
       ),
     );

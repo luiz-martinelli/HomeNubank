@@ -6,13 +6,15 @@ import 'package:nubank/pages/home/bloc/bloc_root.dart';
 import 'package:nubank/pages/home/bloc/bloc_drag_down.dart';
 
 class RootPage extends StatefulWidget {
+  const RootPage({Key? key}) : super(key: key);
+
   @override
   _RootPageState createState() => _RootPageState();
 }
 
 class _RootPageState extends State<RootPage> {
   BlocRoot bloc = BlocRoot();
-  BlocDragDown blocdrag;
+  late BlocDragDown blocdrag;
 
   @override
   void initState() {
@@ -47,7 +49,7 @@ class _RootPageState extends State<RootPage> {
                 bloc.scroll = false;
                 bloc.selectPage.sink.add(!bloc.selectPage.value);
               },
-              child: AppBarHome()),
+              child: const AppBarHome()),
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height * 0.13)),
       body: StreamBuilder(
@@ -56,7 +58,7 @@ class _RootPageState extends State<RootPage> {
           return snapshot.hasData
               ? Stack(
                   children: <Widget>[
-                    HomePage(),
+                    const HomePage(),
                     snapshot.data == true
                         ? PerfilPage(
                             animated: false,

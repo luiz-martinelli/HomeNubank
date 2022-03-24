@@ -6,7 +6,8 @@ class PerfilPage extends StatefulWidget {
   bool animated;
   bool scroll;
 
-  PerfilPage({this.animated, this.scroll});
+  PerfilPage({Key? key, required this.animated, required this.scroll})
+      : super(key: key);
 
   @override
   _PerfilPageState createState() => _PerfilPageState();
@@ -15,7 +16,7 @@ class PerfilPage extends StatefulWidget {
 class _PerfilPageState extends State<PerfilPage> {
   bool anime = true;
   void animation() {
-    Timer(Duration(milliseconds: 10), () {
+    Timer(const Duration(milliseconds: 10), () {
       setState(() {
         anime = !anime;
       });
@@ -35,10 +36,10 @@ class _PerfilPageState extends State<PerfilPage> {
         builder: (context, snaphot) {
           return AnimatedContainer(
             duration: Duration(milliseconds: widget.scroll ? 1 : 500),
-            color: Color.fromRGBO(109, 33, 119, 1.0),
+            color: const Color.fromRGBO(109, 33, 119, 1.0),
             width: MediaQuery.of(context).size.width,
             height: widget.scroll
-                ? snaphot.data * MediaQuery.of(context).size.height
+                ? snaphot.data! * MediaQuery.of(context).size.height
                 : widget.animated == false
                     ? anime
                         ? 0.0
@@ -50,47 +51,47 @@ class _PerfilPageState extends State<PerfilPage> {
               children: <Widget>[
                 Padding(
                   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
-                  child: new Center(
-                    child: new Container(
+                  child: Center(
+                    child: Container(
                       width: 120.0,
                       height: 120.0,
                       color: Colors.white,
                     ),
                   ),
                 ),
-                new Center(
+                const Center(
                   child: Text(
                     "Banco 260 - Nu Pagamentos S.A.",
                     style: TextStyle(color: Colors.white),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5.0),
-                  child: new Center(
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0),
+                  child: Center(
                     child: Text(
                       "Agência 0001",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(top: 5.0, bottom: 15.0),
-                  child: new Center(
+                const Padding(
+                  padding: EdgeInsets.only(top: 5.0, bottom: 15.0),
+                  child: Center(
                     child: Text(
                       "Conta 9999999-1",
                       style: TextStyle(color: Colors.white),
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                  child: new Divider(
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                  child: Divider(
                     color: Color.fromRGBO(145, 64, 169, 1.0),
                     height: 1.0,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     leading: Icon(
                       Icons.help_outline,
@@ -106,15 +107,15 @@ class _PerfilPageState extends State<PerfilPage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                  child: new Divider(
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                  child: Divider(
                     color: Color.fromRGBO(145, 64, 169, 1.0),
                     height: 10.0,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     isThreeLine: false,
                     leading: Icon(
@@ -136,15 +137,15 @@ class _PerfilPageState extends State<PerfilPage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                  child: new Divider(
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                  child: Divider(
                     color: Color.fromRGBO(145, 64, 169, 1.0),
                     height: 10.0,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     isThreeLine: false,
                     leading: Icon(
@@ -161,15 +162,15 @@ class _PerfilPageState extends State<PerfilPage> {
                     ),
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 30.0, right: 30.0),
-                  child: new Divider(
+                const Padding(
+                  padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                  child: Divider(
                     color: Color.fromRGBO(145, 64, 169, 1.0),
                     height: 10.0,
                   ),
                 ),
-                Padding(
-                  padding: const EdgeInsets.only(left: 15.0, right: 15.0),
+                const Padding(
+                  padding: EdgeInsets.only(left: 15.0, right: 15.0),
                   child: ListTile(
                     isThreeLine: false,
                     leading: Icon(
@@ -190,12 +191,12 @@ class _PerfilPageState extends State<PerfilPage> {
                   padding: const EdgeInsets.only(left: 30.0, right: 30.0),
                   child: OutlineButton(
                     onPressed: () {},
-                    child: Text(
+                    child: const Text(
                       "SAIR DO APP",
                       style: TextStyle(color: Colors.white),
                     ),
-                    borderSide:
-                        BorderSide(color: Color.fromRGBO(145, 64, 169, 1.0)),
+                    borderSide: const BorderSide(
+                        color: Color.fromRGBO(145, 64, 169, 1.0)),
                   ),
                 )
               ],

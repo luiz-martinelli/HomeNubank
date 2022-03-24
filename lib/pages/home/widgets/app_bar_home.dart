@@ -1,15 +1,17 @@
 import 'package:flutter/material.dart';
 
 class AppBarHome extends StatelessWidget {
+  const AppBarHome({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(109, 33, 119, 1.0),
+      color: const Color.fromRGBO(109, 33, 119, 1.0),
       child: Padding(
         padding: const EdgeInsets.only(top: 40.0),
-        child: new Column(
+        child: Column(
           children: <Widget>[
-            new Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: <Widget>[
                 Image.network(
@@ -19,7 +21,7 @@ class AppBarHome extends StatelessWidget {
                   color: Colors.white,
                   fit: BoxFit.fitHeight,
                 ),
-                new Text(
+                Text(
                   "Sara",
                   style: TextStyle(
                       color: Colors.white,
@@ -27,7 +29,7 @@ class AppBarHome extends StatelessWidget {
                 )
               ],
             ),
-            Center(
+            const Center(
               child: Icon(
                 Icons.keyboard_arrow_down,
                 color: Colors.white,

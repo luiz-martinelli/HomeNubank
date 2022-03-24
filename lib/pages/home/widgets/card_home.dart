@@ -1,6 +1,10 @@
+// ignore_for_file: unnecessary_new
+
 import 'package:flutter/material.dart';
 
 class CardHome extends StatelessWidget {
+  const CardHome({Key? key}) : super(key: key);
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -69,8 +73,8 @@ class CardHome extends StatelessWidget {
                     maxHeight: MediaQuery.of(context).size.height * 0.15,
                     maxWidth: MediaQuery.of(context).size.width * 0.9,
                     minHeight: MediaQuery.of(context).size.height * 0.15),
-                child: Center(
-                  child: new ListTile(
+                child: const Center(
+                  child: ListTile(
                     title: Text(
                         "Compra mais recente em Pag*Sorvetesrequibom no valor de RS 6,30 terça"),
                     leading: Icon(Icons.fastfood),
@@ -99,7 +103,7 @@ class CardHome extends StatelessWidget {
                               )),
                           Expanded(
                               flex: 2,
-                              child: new Container(
+                              child: Container(
                                 color: Colors.blue,
                               )),
                           Expanded(
