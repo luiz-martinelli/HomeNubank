@@ -54,6 +54,7 @@ class _PerfilPageState extends State<PerfilPage> {
                   padding: const EdgeInsets.only(top: 15.0, bottom: 15.0),
                   child: Center(
                     child: Container(
+                      child: Icon(Icons.perm_identity, size: 100),
                       width: 120.0,
                       height: 120.0,
                       color: Colors.white,
