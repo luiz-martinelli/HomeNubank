@@ -55,9 +55,9 @@ class _PerfilPageState extends State<PerfilPage> {
                   child: Center(
                     child: Container(
                       child: Icon(Icons.perm_identity, size: 100),
-                      width: 120.0,
-                      height: 120.0,
-                      color: Colors.white,
+                      width: 100.0,
+                      height: 100.0,
+                      color: Colors.black54,
                     ),
                   ),
                 ),

@@ -44,15 +44,17 @@ class _HomePageState extends State<HomePage> {
               padding: EdgeInsets.only(
                   top: MediaQuery.of(context).size.height * 0.03),
               child: Container(
-                  constraints: BoxConstraints(
-                      maxHeight: MediaQuery.of(context).size.height * 0.55),
-                  child: PageView.builder(
-                      itemCount: _pages.length,
-                      scrollDirection: Axis.horizontal,
-                      onPageChanged: (index) => bloc.pageChange(index: index),
-                      itemBuilder: (context, index) {
-                        return _pages[index];
-                      })),
+                constraints: BoxConstraints(
+                    maxHeight: MediaQuery.of(context).size.height * 0.55),
+                child: PageView.builder(
+                  itemCount: _pages.length,
+                  scrollDirection: Axis.horizontal,
+                  onPageChanged: (index) => bloc.pageChange(index: index),
+                  itemBuilder: (context, index) {
+                    return _pages[index];
+                  },
+                ),
+              ),
             ),
 
             //DOT PAGE
@@ -70,26 +72,27 @@ class _HomePageState extends State<HomePage> {
                         : MediaQuery.of(context).size.width,
                     maxHeight: 20.0),
                 child: ListView.builder(
-                    itemCount: _pages.length,
-                    scrollDirection: Axis.horizontal,
-                    itemBuilder: (context, index) {
-                      return Padding(
-                        padding: const EdgeInsets.only(left: 8.0),
-                        child: StreamBuilder(
-                            stream: bloc.positionPage.stream,
-                            builder: (context, snapshot) {
-                              return snapshot.hasData
-                                  ? CircleAvatar(
-                                      radius: 3.5,
-                                      backgroundColor: index == snapshot.data
-                                          ? Colors.white
-                                          : const Color.fromRGBO(
-                                              145, 64, 169, 1.0),
-                                    )
-                                  : Container();
-                            }),
-                      );
-                    }),
+                  itemCount: _pages.length,
+                  scrollDirection: Axis.horizontal,
+                  itemBuilder: (context, index) {
+                    return Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: StreamBuilder(
+                        stream: bloc.positionPage.stream,
+                        builder: (context, snapshot) {
+                          return snapshot.hasData
+                              ? CircleAvatar(
+                                  radius: 3.5,
+                                  backgroundColor: index == snapshot.data
+                                      ? Colors.white
+                                      : const Color.fromRGBO(145, 64, 169, 1.0),
+                                )
+                              : Container();
+                        },
+                      ),
+                    );
+                  },
+                ),
               ),
             )
           ],
@@ -100,10 +103,11 @@ class _HomePageState extends State<HomePage> {
             maxWidth: MediaQuery.of(context).size.width,
             maxHeight: MediaQuery.of(context).size.height * 0.16),
         child: ListView.builder(
-            scrollDirection: Axis.horizontal,
-            itemBuilder: (context, index) {
-              return const CardBottom();
-            }),
+          scrollDirection: Axis.horizontal,
+          itemBuilder: (context, index) {
+            return const CardBottom();
+          },
+        ),
       ),
     );
   }

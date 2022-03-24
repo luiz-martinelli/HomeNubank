@@ -6,7 +6,7 @@ class AppBarHome extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color.fromRGBO(109, 33, 119, 1),
+      color: const Color.fromRGBO(109, 33, 119, 1),
       child: Padding(
         padding: const EdgeInsets.only(top: 40.0),
         child: Column(

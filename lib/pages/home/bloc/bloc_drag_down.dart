@@ -22,14 +22,19 @@ class BlocDragDown {
     print("positionEnd:$positionEnd e height: ${height * 0.5}");
 
     if (positionEnd > height * 0.2) {
-      Timer.periodic(const Duration(milliseconds: 150), (Timer t) {
-        //print("Timer");
-        if (positionEnd >= height) {
-          t.cancel();
-        } else {
-          changePosition(updated: (positionEnd + 1.0));
-        }
-      });
+      Timer.periodic(
+        const Duration(milliseconds: 150),
+        (Timer t) {
+          //print("Timer");
+          if (positionEnd >= height) {
+            t.cancel();
+          } else {
+            changePosition(
+              updated: (positionEnd + 1.0),
+            );
+          }
+        },
+      );
     }
   }
 }

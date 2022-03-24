@@ -29,27 +29,28 @@ class _RootPageState extends State<RootPage> {
     return Scaffold(
       appBar: PreferredSize(
           child: GestureDetector(
-              onVerticalDragStart: (DragStartDetails value) {
-                bloc.selectPage.sink.add(true);
-                bloc.scroll = true;
-                blocdrag = BlocDragDown(
-                    positionInit: value.globalPosition.dy,
-                    height: MediaQuery.of(context).size.height);
-                //print("DragStart: ${value.globalPosition.dy}");
-              },
-              onVerticalDragUpdate: (DragUpdateDetails value) {
-                blocdrag.changePosition(updated: value.globalPosition.dy);
-                //print(value);
-              },
-              onVerticalDragEnd: (DragEndDetails value) {
-                blocdrag.velocity = value.velocity.pixelsPerSecond.dy;
-                //print("DragEnd: $value");
-              },
-              onTap: () {
-                bloc.scroll = false;
-                bloc.selectPage.sink.add(!bloc.selectPage.value);
-              },
-              child: const AppBarHome()),
+            onVerticalDragStart: (DragStartDetails value) {
+              bloc.selectPage.sink.add(true);
+              bloc.scroll = true;
+              blocdrag = BlocDragDown(
+                  positionInit: value.globalPosition.dy,
+                  height: MediaQuery.of(context).size.height);
+              //print("DragStart: ${value.globalPosition.dy}");
+            },
+            onVerticalDragUpdate: (DragUpdateDetails value) {
+              blocdrag.changePosition(updated: value.globalPosition.dy);
+              //print(value);
+            },
+            onVerticalDragEnd: (DragEndDetails value) {
+              blocdrag.velocity = value.velocity.pixelsPerSecond.dy;
+              //print("DragEnd: $value");
+            },
+            onTap: () {
+              bloc.scroll = false;
+              bloc.selectPage.sink.add(!bloc.selectPage.value);
+            },
+            child: const AppBarHome(),
+          ),
           preferredSize:
               Size.fromHeight(MediaQuery.of(context).size.height * 0.13)),
       body: StreamBuilder<bool>(
