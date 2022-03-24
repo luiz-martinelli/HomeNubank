@@ -1,9 +1,9 @@
 import 'package:rxdart/rxdart.dart';
 
 class BlocHome {
-  var positionPage = BehaviorSubject<int>(seedValue: 0);
+  var positionPage = BehaviorSubject<int>();
 
-  void pageChange({int index}) {
+  void pageChange({index}) {
     positionPage.sink.add(index);
   }
 }

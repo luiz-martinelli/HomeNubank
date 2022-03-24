@@ -39,8 +39,8 @@ class _PerfilPageState extends State<PerfilPage> {
             color: const Color.fromRGBO(109, 33, 119, 1.0),
             width: MediaQuery.of(context).size.width,
             height: widget.scroll
-                ? snaphot.data! * MediaQuery.of(context).size.height
-                : widget.animated == false
+                ? snaphot.data! : MediaQuery.of(context).size.height,
+            widget.animated == false
                     ? anime
                         ? 0.0
                         : MediaQuery.of(context).size.height
